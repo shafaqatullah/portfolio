@@ -1,28 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vCard - Personal Portfolio</title>
 
-  <!--
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <title>Shafaqatullah Zaheer </title> -->
+<title>Shafaqatullah Zaheer | Software Developer Portfolio</title>
+<meta name="description"
+  content="Portfolio of Shafaqatullah Zaheer, Software Developer specializing in Web, Mobile, and Database projects.">
+<meta name="keywords"
+  content="Shafaqatullah Zaheer, Software Developer, Portfolio, Web Developer, Mobile App Developer">
+<meta name="author" content="Shafaqatullah Zaheer">
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function () {
+    emailjs.init("JgOotvZAbC03y08Bv"); // Replace with your EmailJS public key
+  })();
+</script>
+<!-- <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Collect form data
+      const fullname = this.fullname.value;
+      const email = this.email.value;
+      const message = this.message.value;
+
+      // Validation (already done by 'required' attributes, but extra check)
+      if (!fullname || !email || !message) {
+        alert("Please fill all fields!");
+        return;
+      }
+
+      // Send email using EmailJS
+      emailjs.send("service_7onuwzm", "template_7oewzes", {
+        from_name: fullname,
+        from_email: email,
+        message: message,
+        to_email: "zshafaqatullah@gmail.com"
+      })
+        .then(function (response) {
+          alert("Message sent successfully!");
+          document.getElementById('contactForm').reset();
+        }, function (error) {
+          alert("Oops! Something went wrong. Please try again.");
+          console.log(error);
+        });
+    });
+  </script>
+ -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  (function () {
+    emailjs.init("JgOotvZAbC03y08Bv"); // ✅ Your actual public key
+  })();
+</script>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Collect form data
+    const fullname = this.fullname.value;
+    const email = this.email.value;
+    const message = this.message.value;
+
+    if (!fullname || !email || !message) {
+      alert("Please fill all fields!");
+      return;
+    }
+
+    // Prepare data for EmailJS (match your template variables)
+    const templateParams = {
+      name: fullname + " (" + email + ")", // combines both for easy reference
+      time: new Date().toLocaleString(), // send current time
+      message: message
+    };
+
+    // Send email
+    emailjs.send("service_7onuwzm", "template_7oewzes", templateParams)
+      .then(function (response) {
+        alert("✅ Message sent successfully!");
+        document.getElementById('contactForm').reset();
+      }, function (error) {
+        alert("❌ Failed to send message. Check console for details.");
+        console.log("EmailJS Error:", error);
+      });
+  });
+</script>
+
+<!--
     - favicon
   -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+<link rel="shortcut icon" href="./assets/images/zaheer.png" type="image/x-icon">
 
-  <!--
+<!--
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+<link rel="stylesheet" href="./assets/css/style.css">
 
-  <!--
+<!--
     - google font link
   -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -42,13 +128,13 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Richard hanrick" width="80">
+          <img src="./assets/images/zaheer.png" alt="Shafaqatullah Zaheer" width="80">
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Richard hanrick">Richard hanrick</h1>
+          <h2 class="name" title="Shafaqatullah Zaheer">Shafaqatullah Zaheer</h2>
 
-          <p class="title">Web developer</p>
+          <h3 class="title">Web developer</h3>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -73,9 +159,11 @@
 
             <div class="contact-info">
               <p class="contact-title">Email</p>
-
-              <a href="mailto:richard@example.com" class="contact-link">richard@example.com</a>
+              <a href="mailto:zshafaqatullah@gmail.com" class="contact-link">
+                zshafaqatullah@gmail.com
+              </a>
             </div>
+
 
           </li>
 
@@ -88,7 +176,7 @@
             <div class="contact-info">
               <p class="contact-title">Phone</p>
 
-              <a href="tel:+12133522795" class="contact-link">+1 (213) 352-2795</a>
+              <a href="tel:+12133522795" class="contact-link">+ 93(78) 283-8831</a>
             </div>
 
           </li>
@@ -102,7 +190,7 @@
             <div class="contact-info">
               <p class="contact-title">Birthday</p>
 
-              <time datetime="1982-06-23">June 23, 1982</time>
+              <time datetime="1982-06-23">Navomber 14, 2002</time>
             </div>
 
           </li>
@@ -116,7 +204,7 @@
             <div class="contact-info">
               <p class="contact-title">Location</p>
 
-              <address>Sacramento, California, USA</address>
+              <address>Paghman, Kabul, Afghanistan</address>
             </div>
 
           </li>
@@ -128,14 +216,14 @@
         <ul class="social-list">
 
           <li class="social-item">
-            <a href="#" class="social-link">
+            <a href="https://www.facebook.com/profile.php?id=100065655770169" class="social-link">
               <ion-icon name="logo-facebook"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
+            <a href="https://www.linkedin.com/in/shafaqatullahzaheer" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
 
@@ -181,9 +269,9 @@
             <button class="navbar-link" data-nav-link>Portfolio</button>
           </li>
 
-          <li class="navbar-item">
+          <!-- <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
+          </li> -->
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
@@ -209,18 +297,33 @@
 
         <section class="about-text">
           <p>
-            I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
-            I enjoy
-            turning complex problems into simple, beautiful and intuitive designs.
-          </p>
+            I’m Shafaqatullah Zaheer, a passionate Software Engineer, Developer, Data Analyst, and University
+            Instructor
+            from Kabul, Afghanistan. With over seven years of experience in software development, IT management, and
+            data analysis, I specialize in creating efficient, user-friendly, and innovative digital solutions.
 
-          <p>
-            My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-            Moreover, I
-            add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
-            across your
-            message and identity in the most creative way. I created web design for many famous brand companies.
-          </p>
+            I hold a Bachelor’s degree in Computer Science from Kabul University, where I graduated with top honors.
+            Throughout my career, I’ve worked with well-known organizations such as Elite Valley Company, Hayat
+            Software Company, and Etisalat Afghanistan, where I gained extensive experience in web development, data
+            visualization, database management, and IT systems administration.
+
+            In addition to my professional work, I also serve as a University Lecturer at Tolo-E-Aftab University,
+            where
+            I teach and mentor students in data analysis, software engineering, and emerging technologies. This role
+            allows me to share my knowledge, guide future professionals, and stay connected to the academic and
+            research
+            community.
+
+            I’m highly skilled in full-stack web development, data analytics, and UI/UX design, and I’m always eager
+            to
+            learn and apply new technologies to solve real-world challenges. My mission is to design and develop
+            digital
+            products that are both technically powerful and visually engaging, helping organizations communicate their
+            ideas effectively.
+
+            Driven by creativity, continuous learning, and teamwork, I strive to transform complex ideas into
+            practical
+            solutions that make a meaningful impact. </p>
         </section>
 
 
@@ -242,12 +345,15 @@
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web design</h4>
+                <h4 class="h4 service-item-title">Instructor</h4>
 
                 <p class="service-item-text">
-                  The most modern and high-quality design made at a professional level.
+                  Experienced university instructor dedicated to teaching computer science, data analysis, and
+                  software
+                  development with a focus on practical learning and innovation.
                 </p>
               </div>
+
 
             </li>
 
@@ -290,10 +396,11 @@
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Photography</h4>
+                <h4 class="h4 service-item-title">Data Analyst</h4>
 
-                <p class="service-item-text">
-                  I make high-quality photos of any category at a professional level.
+                <p class="service-item-text"> Transforming raw data into actionable insights through advanced
+                  analytics
+                  and visualization techniques.
                 </p>
               </div>
 
@@ -307,7 +414,6 @@
         <!--
           - testimonials
         -->
-
         <section class="testimonials">
 
           <h3 class="h3 testimonials-title">Testimonials</h3>
@@ -318,18 +424,18 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/avatar-1.png" alt="Farid Khan" width="60" data-testimonials-avatar>
                 </figure>
 
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Farid Khan</h4>
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                    Shafaqatullah is an exceptionally talented software engineer. During his time at Harirod
+                    Construction Company,
+                    he managed IT operations efficiently and introduced innovative solutions that improved overall
+                    productivity.
+                    His leadership and problem-solving skills truly stand out.
                   </p>
                 </div>
 
@@ -340,18 +446,18 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/avatar-2.png" alt="Yahya Khan" width="60" data-testimonials-avatar>
                 </figure>
 
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Yahya Khan</h4>
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                    I had the pleasure of working with Shafaqatullah at Hayat Software Company. His ability to handle
+                    complex
+                    data analysis and full-stack development tasks was outstanding. He consistently delivered
+                    high-quality
+                    results and always supported his team with great professionalism.
                   </p>
                 </div>
 
@@ -362,18 +468,16 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/avatar-1.png" alt="University Student" width="60" data-testimonials-avatar>
                 </figure>
 
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Student at Tolo-E-Aftab University</h4>
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                    As a lecturer, Mr. Zaheer is highly knowledgeable and dedicated. His teaching style makes complex
+                    technical
+                    topics easy to understand, and he always encourages students to think creatively and practically.
                   </p>
                 </div>
 
@@ -384,18 +488,17 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/avatar-4.png" alt="Etisalat Colleague" width="60" data-testimonials-avatar>
                 </figure>
 
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Etisalat Colleague</h4>
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                    Shafaqatullah is a reliable and hard-working professional. His communication and technical skills
+                    make him
+                    a valuable team member. He always focuses on delivering excellent service and improving system
+                    efficiency.
                   </p>
                 </div>
 
@@ -455,46 +558,41 @@
         <!--
           - clients
         -->
-
         <section class="clients">
 
-          <h3 class="h3 clients-title">Clients</h3>
+          <h3 class="h3 clients-title">Clients & Collaborations</h3>
 
           <ul class="clients-list has-scrollbar">
 
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-1-color.png" alt="client logo">
+              <a href="#" title="Elite Valley Software Company">
+                <img src="./assets/images/logo.svg" alt="Elite Valley Software Company logo">
               </a>
             </li>
 
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-2-color.png" alt="client logo">
+              <a href="#" title="Hayat Software Company">
+                <img src="./assets/images/hayat.png" alt="Hayat Software Company logo">
               </a>
             </li>
 
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-3-color.png" alt="client logo">
+              <a href="#" title="Etisalat Afghanistan">
+                <img src="./assets/images/etisalat-logo.png" alt="Etisalat Afghanistan logo">
               </a>
             </li>
 
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-4-color.png" alt="client logo">
+              <a href="#" title="Tolo-E-Aftab University">
+                <img src="./assets/images/tolo.png" alt="Tolo-E-Aftab University logo">
               </a>
             </li>
 
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-5-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-6-color.png" alt="client logo">
+              <a href="#" title="International Legal Foundation Afghanistan (ILF-A)">
+                <img
+                  src="https://tse2.mm.bing.net/th/id/OIP.GKqGj39iw3TMUtfn3V1LAgHaHa?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+                  alt="International Legal Foundation logo">
               </a>
             </li>
 
@@ -518,193 +616,372 @@
           <h2 class="h2 article-title">Resume</h2>
         </header>
 
+        <!-- Education Section -->
         <section class="timeline">
-
           <div class="title-wrapper">
             <div class="icon-box">
               <ion-icon name="book-outline"></ion-icon>
             </div>
-
             <h3 class="h3">Education</h3>
           </div>
 
           <ol class="timeline-list">
 
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">University school of the arts</h4>
-
-              <span>2007 — 2008</span>
-
+              <h4 class="h4 timeline-item-title">Kabul University - Faculty of Computer Science</h4>
+              <span>2021 — 2025</span>
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                Bachelor of Science in Software Engineering. Focused on full-stack web development, software
+                architecture, and modern programming technologies. Completed various academic and real-world projects
+                demonstrating strong problem-solving and coding skills.
               </p>
-
             </li>
 
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">New york academy of art</h4>
-
-              <span>2006 — 2007</span>
-
+              <h4 class="h4 timeline-item-title">Hassan Basri High School</h4>
+              <span>2008 — 2020</span>
               <p class="timeline-text">
-                Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est
-                omnis..
+                Successfully completed secondary education with distinction, focusing on science and mathematics,
+                which
+                built the foundation for a career in software engineering.
               </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">High school of art and design</h4>
-
-              <span>2002 — 2004</span>
-
-              <p class="timeline-text">
-                Duis aute irure dolor in reprehenderit in voluptate, quila voluptas mag odit aut fugit, sed consequuntur
-                magni dolores
-                eos.
-              </p>
-
             </li>
 
           </ol>
-
         </section>
 
+        <!-- Experience Section -->
         <section class="timeline">
-
           <div class="title-wrapper">
             <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+              <ion-icon name="briefcase-outline"></ion-icon>
             </div>
-
             <h3 class="h3">Experience</h3>
           </div>
 
           <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Instructor — Elite Valley Company</h4>
+              <span>2024 — Present</span>
+              <p class="timeline-text">
+                Teaching and mentoring students in programming fundamentals, web development, and database management.
+                Designed structured lesson plans and guided learners through practical coding projects using HTML,
+                CSS,
+                JavaScript, and React. Helped students build real-world applications and strengthen their
+                problem-solving skills.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Software Developer — Hayat Software Company</h4>
+              <span>2023 — 2024</span>
+              <p class="timeline-text">
+                Contributed to the development of full-stack web applications, focusing on clean code architecture and
+                efficient backend logic using Node.js and MongoDB. Collaborated with the design and QA teams to
+                deliver
+                user-friendly interfaces, improve performance, and ensure high-quality software releases.
+              </p>
+            </li>
+
 
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Creative director</h4>
-
-              <span>2015 — Present</span>
-
+              <h4 class="h4 timeline-item-title">Software Developer — Elite Valley Company</h4>
+              <span>2024 — Present</span>
               <p class="timeline-text">
-                Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas
-                molestias
-                exceptur.
+                Developed and maintained responsive web applications using modern technologies such as JavaScript,
+                React, Node.js, and MongoDB. Collaborated with cross-functional teams to design user-friendly
+                interfaces
+                and improve system performance.
               </p>
-
             </li>
 
             <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Art director</h4>
-
-              <span>2013 — 2015</span>
-
+              <h4 class="h4 timeline-item-title">Call Center Agent — Etisalat Afghanistan</h4>
+              <span>2022 — 2023</span>
               <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
+                Handled customer inquiries efficiently, resolved technical and billing issues, and provided excellent
+                support to enhance customer satisfaction and company reputation.
               </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Web designer</h4>
-
-              <span>2010 — 2013</span>
-
-              <p class="timeline-text">
-                Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et
-                quas molestias
-                exceptur.
-              </p>
-
             </li>
 
           </ol>
-
         </section>
 
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
+        <!-- Skills Section -->
+        <!-- <section class="skill">
+          <h3 class="h3 skills-title">My Skills</h3>
 
           <ul class="skills-list content-card">
 
             <li class="skills-item">
-
               <div class="title-wrapper">
-                <h5 class="h5">Web design</h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Graphic design</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Branding</h5>
+                <h5 class="h5">Data Analysis & Visualization</h5>
                 <data value="90">90%</data>
               </div>
-
               <div class="skill-progress-bg">
                 <div class="skill-progress-fill" style="width: 90%;"></div>
               </div>
-
             </li>
 
             <li class="skills-item">
-
               <div class="title-wrapper">
-                <h5 class="h5">WordPress</h5>
-                <data value="50">50%</data>
+                <h5 class="h5">Machine Learning & Big Data</h5>
+                <data value="85">85%</data>
               </div>
-
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 50%;"></div>
+                <div class="skill-progress-fill" style="width: 85%;"></div>
               </div>
+            </li>
 
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Full Stack Web Development</h5>
+                <data value="90">90%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Database Management Systems</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Programming Languages</h5>
+                <data value="90">90%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">IT & Project Management</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="title-wrapper">
+                <h5 class="h5">Communication & Leadership</h5>
+                <data value="95">95%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 95%;"></div>
+              </div>
             </li>
 
           </ul>
+        </section> -->
+        <!-- My Skills Section -->
+        <section class="skill" id="skills">
+          <h3 class="h3 skills-title">My Skills</h3>
 
+          <ul class="skills-list content-card">
+
+            <!-- Data Analysis -->
+            <li class="skills-item fade-in">
+              <div class="title-wrapper flex items-center gap-2">
+                <ion-icon name="analytics-outline"></ion-icon>
+                <h5 class="h5">Data Analysis & Visualization</h5>
+                <data value="90">90%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-progress="90"></div>
+              </div>
+              <p class="timeline-text mt-2 text-sm text-gray-400">
+                SQL, Power BI, Tableau, Excel, Google Sheets, KOBO, Python (Matplotlib, Seaborn)
+              </p>
+            </li>
+
+            <!-- Machine Learning & Big Data -->
+            <li class="skills-item fade-in">
+              <div class="title-wrapper flex items-center gap-2">
+                <ion-icon name="cloud-outline"></ion-icon>
+                <h5 class="h5">Machine Learning & Big Data</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-progress="85"></div>
+              </div>
+              <p class="timeline-text mt-2 text-sm text-gray-400">
+                Hadoop, Kafka, Hive, Impala, AI, Predictive Modeling, Data Mining
+              </p>
+            </li>
+
+            <!-- Full Stack Web Development -->
+            <li class="skills-item fade-in">
+              <div class="title-wrapper flex items-center gap-2">
+                <ion-icon name="code-slash-outline"></ion-icon>
+                <h5 class="h5">Full Stack Web Development</h5>
+                <data value="90">90%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-progress="90"></div>
+              </div>
+              <p class="timeline-text mt-2 text-sm text-gray-400">
+                HTML, CSS, JavaScript, React, Node.js, ASP.NET Core, PHP, Git & GitHub
+              </p>
+            </li>
+
+            <!-- Database Systems -->
+            <li class="skills-item fade-in">
+              <div class="title-wrapper flex items-center gap-2">
+                <ion-icon name="server-outline"></ion-icon>
+                <h5 class="h5">Database Management Systems</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-progress="85"></div>
+              </div>
+              <p class="timeline-text mt-2 text-sm text-gray-400">
+                MySQL, MongoDB, PostgreSQL, SQL Server, Oracle, SQLite
+              </p>
+            </li>
+
+            <!-- Programming Languages -->
+            <li class="skills-item fade-in">
+              <div class="title-wrapper flex items-center gap-2">
+                <ion-icon name="terminal-outline"></ion-icon>
+                <h5 class="h5">Programming Languages</h5>
+                <data value="90">90%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-progress="90"></div>
+              </div>
+              <p class="timeline-text mt-2 text-sm text-gray-400">
+                C, C++, C#, Java, Python, R, Scala, MATLAB
+              </p>
+            </li>
+
+            <!-- IT Management -->
+            <li class="skills-item fade-in">
+              <div class="title-wrapper flex items-center gap-2">
+                <ion-icon name="business-outline"></ion-icon>
+                <h5 class="h5">IT & Project Management</h5>
+                <data value="85">85%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-progress="85"></div>
+              </div>
+              <p class="timeline-text mt-2 text-sm text-gray-400">
+                Team leadership, IT policy development, planning, auditing, and project supervision
+              </p>
+            </li>
+
+            <!-- Communication & Leadership -->
+            <li class="skills-item fade-in">
+              <div class="title-wrapper flex items-center gap-2">
+                <ion-icon name="people-outline"></ion-icon>
+                <h5 class="h5">Communication & Leadership</h5>
+                <data value="95">95%</data>
+              </div>
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" data-progress="95"></div>
+              </div>
+              <p class="timeline-text mt-2 text-sm text-gray-400">
+                Public speaking, teaching, teamwork, negotiation, mentoring, and professional writing
+              </p>
+            </li>
+
+          </ul>
         </section>
 
+        <!-- JavaScript for Animation -->
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const skillsSection = document.querySelector("#skills");
+            const skillBars = document.querySelectorAll(".skill-progress-fill");
+            const fadeItems = document.querySelectorAll(".fade-in");
+
+            const observer = new IntersectionObserver(entries => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  // Animate progress bars
+                  skillBars.forEach(bar => {
+                    const progress = bar.getAttribute("data-progress");
+                    bar.style.width = progress + "%";
+                  });
+                  // Animate fade-ins with stagger
+                  fadeItems.forEach((item, index) => {
+                    setTimeout(() => item.classList.add("visible"), index * 150);
+                  });
+                  observer.disconnect(); // only run once
+                }
+              });
+            }, { threshold: 0.3 });
+
+            observer.observe(skillsSection);
+          });
+        </script>
+
+        <!-- CSS for Animations and Gradient -->
+        <style>
+          .skill-progress-bg {
+            background: #1e1e1e;
+            border-radius: 10px;
+            height: 8px;
+            overflow: hidden;
+            margin-top: 8px;
+          }
+
+          .skill-progress-fill {
+            background: linear-gradient(90deg, #e9ec07, #3b82f6);
+            height: 8px;
+            width: 0%;
+            border-radius: 10px;
+            transition: width 1.8s ease-in-out;
+            box-shadow: 0 0 10px rgba(91, 33, 182, 0.7);
+          }
+
+          /* Fade-in effect */
+          .fade-in {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 1.2s ease;
+          }
+
+          .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+          }
+
+          /* Ionicons styling */
+          .skills-item ion-icon {
+            color: #7c3aed;
+            font-size: 20px;
+          }
+
+          /* Text styling */
+          .skills-item h5 {
+            color: #fff;
+            font-weight: 600;
+          }
+
+          .timeline-text {
+            color: #a1a1aa;
+          }
+        </style>
+
       </article>
-
-
 
 
 
       <!--
         - #PORTFOLIO
       -->
-
+      <!-- 
       <article class="portfolio" data-page="portfolio">
 
         <header>
@@ -936,8 +1213,119 @@
         </section>
 
       </article>
+ -->
 
+      <article class="portfolio" data-page="portfolio">
 
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <!-- ===== FILTER BUTTONS ===== -->
+          <ul class="filter-list">
+            <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
+            <li class="filter-item"><button data-filter-btn>Web Development</button></li>
+            <li class="filter-item"><button data-filter-btn>Mobile Applications</button></li>
+            <li class="filter-item"><button data-filter-btn>Database Projects</button></li>
+          </ul>
+
+          <!-- ===== FILTER DROPDOWN (for mobile) ===== -->
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-selecct-value>Select category</div>
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+            </button>
+
+            <ul class="select-list">
+              <li class="select-item"><button data-select-item>All</button></li>
+              <li class="select-item"><button data-select-item>Web Development</button></li>
+              <li class="select-item"><button data-select-item>Mobile Applications</button></li>
+              <li class="select-item"><button data-select-item>Database Projects</button></li>
+            </ul>
+          </div>
+
+          <!-- ===== PROJECT LIST ===== -->
+          <ul class="project-list">
+
+            <!-- Project 1: E-Commerce Platform -->
+            <li class="project-item active" data-filter-item data-category="web development">
+              <a href="#" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-2.png" alt="E-Commerce Platform" loading="lazy">
+                </figure>
+                <h3 class="project-title">E-Commerce Platform</h3>
+                <p class="project-category">Web & Mobile Development</p>
+                <p class="project-description">
+                  A complete marketplace for buying and selling second-hand materials. Includes both website and
+                  mobile
+                  app with secure user accounts, product uploads, and real-time messaging.
+                </p>
+              </a>
+            </li>
+            <li class="project-item active" data-filter-item data-category="database projects">
+              <a href="#" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-1.jpg" alt="Course Management System" loading="lazy">
+                </figure>
+                <h3 class="project-title">Course Management System</h3>
+                <p class="project-category">Database Projects</p>
+                <p class="project-description">
+                  A system built for universities to manage courses, track students’ progress, and assign instructors
+                  efficiently. Developed using HTML, CSS, JavaScript, PHP, and MySQL.
+                </p>
+              </a>
+            </li>
+            <!-- Project 3: Omari App and Database -->
+            <li class="project-item active" data-filter-item data-category="mobile applications">
+              <a href="#" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-3.jpg" alt="Omari App" loading="lazy">
+                </figure>
+                <h3 class="project-title">Omari App & Database</h3>
+                <p class="project-category">Mobile App & Database Design</p>
+                <p class="project-description">
+                  A mobile application built for efficient data collection and analysis. Designed a secure database
+                  structure and API integration for fast data access and updates.
+                </p>
+              </a>
+            </li>
+
+            <!-- Project 4: Arzan Telecom -->
+            <li class="project-item active" data-filter-item data-category="mobile applications">
+              <a href="#" target="_blank">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-4.png" alt="Arzan Telecom App" loading="lazy">
+                </figure>
+                <h3 class="project-title">Arzan Telecom App & Database</h3>
+                <p class="project-category">Mobile App & Database</p>
+                <p class="project-description">
+                  Developed a mobile application and backend database system for Arzan Telecom to manage users, plans,
+                  and transaction history. Ensured high performance and secure data handling.
+                </p>
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
 
 
 
@@ -945,7 +1333,7 @@
         - #BLOG
       -->
 
-      <article class="blog" data-page="blog">
+      <!-- <article class="blog" data-page="blog">
 
         <header>
           <h2 class="h2 article-title">Blog</h2>
@@ -1128,7 +1516,7 @@
         </section>
 
       </article>
-
+ -->
 
 
 
@@ -1146,30 +1534,24 @@
         <section class="mapbox" data-mapbox>
           <figure>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-              width="400" height="300" loading="lazy"></iframe>
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21332971.589923486!2d59.51950000000001!3d33.826801000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d6f1d43271d859%3A0x0!2zMzPCsDE5JzI2LjQiTiA1OcKwMzEnMzIuNyJF!5e0!3m2!1sen!2saf!4v0000000000000!5m2!1sen!2saf"
+              width="400" height="300" loading="lazy" style="border:0;" allowfullscreen=""
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
           </figure>
         </section>
 
         <section class="contact-form">
-
           <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
+          <form id="contactForm" class="form" data-form>
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
               <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
             </div>
-
             <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
+            <button class="form-btn" type="submit" data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
             </button>
-
           </form>
 
         </section>

@@ -134,6 +134,119 @@ for (let i = 0; i < formInputs.length; i++) {
   });
 }
 
+// rotating title variables
+const titleElement = document.querySelector(".info-content .title");
+const titles = ["Mobile App Developer", "Web Developer", "Data Analyst"];
+let currentTitleIndex = 0;
+
+// Add CSS for animations
+const style = document.createElement('style');
+style.textContent = `
+  .info-content .title {
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-origin: center;
+  }
+  
+  .title-slide-in {
+    animation: slideIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+  
+  .title-slide-out {
+    animation: slideOut 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(30px) scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  @keyframes slideOut {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-30px) scale(0.8);
+    }
+  }
+  
+  .title-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+                  0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    to {
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.4),
+                  0 0 30px rgba(255, 255, 255, 0.3),
+                  0 0 40px rgba(255, 255, 255, 0.2);
+    }
+  }
+`;
+document.head.appendChild(style);
+
+// rotating title functionality with exciting animations
+const rotateTitle = function () {
+  // Add slide out animation
+  titleElement.classList.add('title-slide-out');
+
+  setTimeout(() => {
+    // Change text
+    currentTitleIndex = (currentTitleIndex + 1) % titles.length;
+    titleElement.textContent = titles[currentTitleIndex];
+
+    // Remove old classes and add slide in
+    titleElement.classList.remove('title-slide-out');
+    titleElement.classList.add('title-slide-in');
+
+    // Add glow effect for a moment
+    titleElement.classList.add('title-glow');
+
+    // Remove glow after 1 second
+    setTimeout(() => {
+      titleElement.classList.remove('title-glow');
+    }, 2000);
+
+    // Remove slide-in class after animation completes
+    setTimeout(() => {
+      titleElement.classList.remove('title-slide-in');
+    }, 900);
+
+  }, 900); // Wait for slide out to complete
+}
+
+// Start rotating titles every 2 seconds
+setInterval(rotateTitle, 5000);
+
+// Initialize with glow effect
+titleElement.classList.add('title-glow');
+setTimeout(() => {
+  titleElement.classList.remove('title-glow');
+}, 1000);
+// // rotating title variables
+// const titleElement = document.querySelector(".info-content .title");
+// const titles = ["Mobile App Developer", "Web Developer", "Data Analyst"];
+// let currentTitleIndex = 0;
+
+// // rotating title functionality
+// const rotateTitle = function () {
+//   currentTitleIndex = (currentTitleIndex + 1) % titles.length;
+//   titleElement.textContent = titles[currentTitleIndex];
+// }
+
+// // start rotating titles every 2 seconds
+// setInterval(rotateTitle, 2000);
 
 
 // page navigation variables
